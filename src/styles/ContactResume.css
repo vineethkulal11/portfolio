@@ -1,0 +1,145 @@
+/* ── Resume Section ── */
+.resume-section {
+  text-align: center;
+  padding: 0 60px 80px;
+}
+
+.resume-qr-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 48px 60px;
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+  position: relative;
+}
+
+.resume-qr-container::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), transparent 50%, rgba(0, 245, 255, 0.05));
+  z-index: -1;
+}
+
+.resume-qr-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.resume-qr-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.resume-qr-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.resume-download-btn {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid var(--green);
+  color: var(--green);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-download-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.resume-download-btn:hover::before { transform: translateX(0); }
+.resume-download-btn:hover { color: #020510; box-shadow: var(--glow-green); }
+
+/* ── Contact Section ── */
+.contact-section { text-align: center; }
+
+.contact-grid {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 245, 255, 0.1);
+  padding: 26px 32px;
+  min-width: 190px;
+  position: relative;
+  transition: all 0.3s;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  text-decoration: none;
+  display: block;
+}
+
+.contact-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-4px);
+}
+
+.contact-card-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.contact-card-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-card-value {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 28px;
+  border-top: 1px solid rgba(0, 245, 255, 0.07);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .resume-section { padding: 0 20px 60px; }
+  .resume-qr-container { padding: 32px 28px; }
+}

@@ -1,0 +1,89 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 26px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(123, 47, 255, 0.15);
+  padding: 34px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, rgba(123, 47, 255, 0.04) 25%, transparent 50%);
+  animation: rotate-bg 8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.project-card:hover::before { opacity: 1; }
+
+@keyframes rotate-bg { to { transform: rotate(360deg); } }
+
+.project-card:hover {
+  border-color: rgba(123, 47, 255, 0.5);
+  transform: translateY(-7px) perspective(800px) rotateY(-3deg);
+  box-shadow: 0 30px 80px rgba(123, 47, 255, 0.18);
+}
+
+.project-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 46px;
+  font-weight: 900;
+  color: rgba(123, 47, 255, 0.1);
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  line-height: 1;
+}
+
+.project-icon {
+  font-size: 34px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.project-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.project-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  padding: 3px 9px;
+  background: rgba(123, 47, 255, 0.1);
+  border: 1px solid rgba(123, 47, 255, 0.3);
+  color: #a67dff;
+  letter-spacing: 1px;
+}

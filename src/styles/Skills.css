@@ -1,0 +1,73 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 245, 255, 0.1);
+  padding: 26px 30px;
+  position: relative;
+  transition: all 0.4s ease;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.skill-card:hover {
+  border-color: rgba(0, 245, 255, 0.45);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 245, 255, 0.12);
+}
+
+.skill-card:hover::before { opacity: 1; }
+
+.skill-card-icon {
+  font-size: 26px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skill-card-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skill-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  background: rgba(0, 245, 255, 0.05);
+  border: 1px solid rgba(0, 245, 255, 0.18);
+  color: var(--text-dim);
+  border-radius: 2px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.skill-tag:hover {
+  background: rgba(0, 245, 255, 0.14);
+  color: var(--primary);
+  border-color: rgba(0, 245, 255, 0.45);
+}
